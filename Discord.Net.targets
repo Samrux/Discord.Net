@@ -1,11 +1,12 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <VersionPrefix>2.0.0</VersionPrefix>
-        <VersionSuffix>beta2</VersionSuffix>
+        <VersionPrefix>2.0.2</VersionPrefix>
+        <VersionSuffix>dev</VersionSuffix>
         <Authors>RogueException</Authors>
         <PackageTags>discord;discordapp</PackageTags>
         <PackageProjectUrl>https://github.com/RogueException/Discord.Net</PackageProjectUrl>
         <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
+        <PackageIconUrl>https://github.com/RogueException/Discord.Net/raw/dev/docs/marketing/logo/PackageLogo.png</PackageIconUrl>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>git://github.com/RogueException/Discord.Net</RepositoryUrl>
     </PropertyGroup>
@@ -16,13 +17,7 @@
     <PropertyGroup Condition=" '$(BuildNumber)' != '' And $(IsTagBuild) != 'true' ">
         <VersionSuffix Condition=" '$(VersionSuffix)' != '' ">$(VersionSuffix)-$(BuildNumber)</VersionSuffix>
         <VersionSuffix Condition=" '$(VersionSuffix)' == '' ">build-$(BuildNumber)</VersionSuffix>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' Or '$(TargetFramework)' == 'net45' ">
-        <DefineConstants>$(DefineConstants);FILESYSTEM;DEFAULTUDPCLIENT;DEFAULTWEBSOCKET</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-        <DefineConstants>$(DefineConstants);FORMATSTR;UNIXTIME;MSTRYBUFFER;UDPDISPOSE</DefineConstants>
-    </PropertyGroup>
+    </PropertyGroup>     
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
         <NoWarn>$(NoWarn);CS1573;CS1591</NoWarn>
         <WarningsAsErrors>true</WarningsAsErrors>
