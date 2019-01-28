@@ -82,6 +82,7 @@ namespace Discord
             // DM Channels
             ulong dmChannel = (ulong)(
                 ChannelPermission.ViewChannel
+                | ChannelPermission.AddReactions
                 | ChannelPermission.SendMessages
                 | ChannelPermission.EmbedLinks
                 | ChannelPermission.AttachFiles
